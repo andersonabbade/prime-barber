@@ -1,6 +1,8 @@
 
 
 
+
+
 * {
     margin: 0;
     padding: 0;
@@ -41,6 +43,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -430,8 +433,11 @@ button:hover {
     margin-bottom: 12px;
 }
 
+/* CORREÇÃO DO MAPA */
 .contato-mapa {
     flex: 1;
+    width: 100%;
+    height: 380px;
     min-height: 380px;
     border-radius: 14px;
     overflow: hidden;
@@ -443,6 +449,7 @@ button:hover {
     width: 100%;
     height: 100%;
     display: block;
+    border: 0;
 }
 
 /* ==========================================================
@@ -502,92 +509,6 @@ footer {
     padding-top: 20px;
     color: #666;
     font-size: 0.8rem;
-}
-
-/* ==========================================================
-   RESPONSIVIDADE
-   ========================================================== */
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        background-color: #2c2424;
-        position: absolute;
-        top: 100px;
-        right: 0;
-        width: 220px;
-        padding: 20px;
-        border: 2px solid #d4af37;
-    }
-
-    .menu.show {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .menu li {
-        margin: 10px 0;
-    }
-
-    .hero {
-        min-height: 90vh;
-        padding: 40px 0;
-        background-position: center;
-    }
-
-    .hero-content {
-        max-width: 100%;
-        padding: 30px 22px;
-        text-align: left;
-    }
-
-    .hero h1 {
-        font-size: 2.4rem;
-    }
-
-    .hero p,
-    .hero-texto {
-        font-size: 1rem;
-        line-height: 1.6;
-        max-width: 100%;
-    }
-
-    .hero-botoes {
-        justify-content: flex-start;
-    }
-
-    .servicos-grid,
-    .footer-content,
-    .quem-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .contato-container {
-        flex-direction: column;
-    }
-
-    .contato-info {
-        padding: 28px 22px;
-        text-align: left;
-    }
-
-    .contato-info h2 {
-        font-size: 2rem;
-    }
-
-    .contato-mapa {
-        min-height: 300px;
-    }
-
-    .card {
-        width: 90%;
-        max-width: 320px;
-    }
 }
 
 .btn-agendar {
@@ -609,7 +530,6 @@ footer {
     color: #000;
 }
 
-
 .whatsapp-float {
     position: fixed;
     bottom: 25px;
@@ -617,14 +537,11 @@ footer {
     width: 60px;
     height: 60px;
     z-index: 999;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background-color: #1d472c;
     border-radius: 50%;
-
     box-shadow: 0 5px 15px rgba(0,0,0,0.4);
     transition: 0.3s;
 }
@@ -638,474 +555,6 @@ footer {
     transform: scale(1.1);
 }
 
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: #1a1a1a;
-    color: #f5f5f5;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ==========================================================
-   HEADER
-   ========================================================== */
-header {
-    background-color: #000;
-    padding: 15px 0;
-    border-bottom: 2px solid #d4af37;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    height: 80px;
-    width: auto;
-    display: block;
-}
-
-.menu {
-    display: flex;
-    list-style: none;
-}
-
-.menu li {
-    margin-left: 40px;
-}
-
-.menu a {
-    color: #f5f5f5;
-    text-decoration: none;
-    font-weight: lighter;
-    transition: 0.3s;
-}
-
-.menu a:hover {
-    color: #d4af37;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #d4af37;
-}
-
-/* ==========================================================
-   HERO PREMIUM
-   ========================================================== */
-.hero {
-    position: relative;
-    min-height: 100vh;
-    background: url('../img/hero.bg.png') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.35);
-    z-index: 1;
-}
-
-.hero-container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-}
-
-.hero-content {
-    max-width: 620px;
-    background: rgba(0, 0, 0, 0.55);
-    padding: 50px 45px;
-    color: #fff;
-    backdrop-filter: blur(2px);
-    text-align: left;
-}
-
-/* texto entrando da esquerda */
-.hidden-home {
-    opacity: 0;
-    transform: translateX(-120px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.mostrar-home {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.hero h1 {
-    font-size: 4.2rem;
-    line-height: 1.1;
-    font-weight: 700;
-    margin-bottom: 24px;
-    color: #f5f5f5;
-}
-
-.hero p,
-.hero-texto {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    color: #f1f1f1;
-    max-width: 540px;
-}
-
-.hero-tag {
-    display: inline-block;
-    margin-bottom: 18px;
-    padding: 8px 16px;
-    border: 1px solid #d4af37;
-    border-radius: 30px;
-    color: #8f6e02;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background-color:   #241c01;
-}
-
-.hero-subtitulo {
-    font-size: 1.6rem;
-    color: #ffffff;
-    font-weight: 400;
-    margin-bottom: 22px;
-    line-height: 1.4;
-}
-
-.hero-botoes {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.btn-principal,
-.btn-secundario {
-    display: inline-block;
-    padding: 14px 32px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-.btn-principal {
-    background-color:  #d4af37;
-    color: #000;
-    border: 1px solid #d4af37;
-}
-
-.btn-principal:hover {
-    background-color: #f5f5f5;
-    border-color: #f5f5f5;
-    transform: translateY(-2px);
-}
-
-.btn-secundario {
-    background-color: transparent;
-    color: #f5f5f5;
-    border: 1px solid #d4af37;
-}
-
-.btn-secundario:hover {
-    background-color: #d4af37;
-    color: #000;
-    transform: translateY(-2px);
-}
-
-/* ==========================================================
-   TAGS DE SEÇÃO
-   ========================================================== */
-.secao-tag {
-    display: inline-block;
-    margin-bottom: 12px;
-    padding: 7px 14px;
-    border: 1px solid rgba(212, 175, 55, 0.6);
-    border-radius: 30px;
-    color: #d4af37;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background-color: rgba(212, 175, 55, 0.08);
-}
-
-/* ==========================================================
-   QUEM SOMOS
-   ========================================================== */
-#quem-somos {
-    padding: 120px 0;
-    background-color: #111;
-}
-
-.quem-container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.quem-texto,
-.quem-img {
-    flex: 1;
-}
-
-.quem-texto h2 {
-    font-size: 2.5rem;
-    color: #d4af37;
-    margin-bottom: 20px;
-    font-weight: lighter;
-}
-
-.quem-texto p {
-    font-size: 1.15rem;
-    margin-bottom: 15px;
-    color: #ddd;
-    line-height: 1.15;
-}
-
-.quem-img img {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid #d4af37;
-    display: block;
-}
-
-/* ==========================================================
-   SERVIÇOS
-   ========================================================== */
-#servicos {
-    
-    padding: 150px 0;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    background-image: url('../img/fundo-tesoura.png');
-    background-repeat: repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-    overflow: hidden;
-}
-
-#servicos::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgba(8, 8, 8, 0.72);
-    z-index: 1;
-}
-
-#servicos .container {
-    position: relative;
-    z-index: 2;
-}
-
-#servicos h1 {
-    margin-bottom: 50px;
-    font-weight: lighter;
-    font-size: 2.5rem;
-}
-
-.servicos-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background-color: rgba(3, 3, 3, 0.95);
-    padding: 0 0 25px 0;
-    border-radius: 12px;
-    width: 300px;
-    border: 1px solid #333;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-}
-
-.card-img,
-.card-cabelo,
-.card-barba,
-.card-combo {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.card h3 {
-    color: #d4af37;
-    margin-bottom: 15px;
-    padding: 0 10px;
-}
-
-.preco {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-button {
-    background-color: transparent;
-    border: 1px solid #d4af37;
-    color: #d4af37;
-    padding: 10px 24px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #d4af37;
-    color: #000;
-}
-
-/* ==========================================================
-   ANIMAÇÃO DOS CARDS
-   ========================================================== */
-.hidden {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.mostrar {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.card.hidden:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.card.hidden:nth-child(3) {
-    transition-delay: 0.4s;
-}
-
-/* ==========================================================
-   CONTATO
-   ========================================================== */
-#contato {
-    padding: 100px 20px;
-}
-
-.contato-flex {
-    display: flex;
-    justify-content: space-around;
-    padding: 60px 0;
-    border-top: 1px solid #333;
-    gap: 30px;
-}
-
-.contato-flex h2 {
-    color: #f5f5f5;
-    margin-bottom: 15px;
-    font-weight: lighter;
-    font-size: 2rem;
-}
-
-.info p,
-.horarios li {
-    color: #ddd;
-}
-
-.horarios ul {
-    list-style: none;
-}
-
-/* ==========================================================
-   FOOTER
-   ========================================================== */
-footer {
-    background-color: #000;
-    padding: 60px 0 20px 0;
-    border-top: 1px solid #333;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.footer-box {
-    flex: 1;
-    min-width: 250px;
-}
-
-.footer-box h3 {
-    color: #d4af37;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-}
-
-.footer-box p {
-    color: #ddd;
-}
-
-.footer-box a {
-    color: #f5f5f5;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-box a:hover {
-    color: #d4af37;
-    padding-left: 5px;
-}
-
-.social-links a {
-    display: inline-block;
-    margin-right: 15px;
-    border: 1px solid #d4af37;
-    padding: 5px 10px;
-    border-radius: 3px;
-}
-
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid #222;
-    padding-top: 20px;
-    color: #666;
-    font-size: 0.8rem;
-}
-
 /* ==========================================================
    RESPONSIVIDADE
    ========================================================== */
@@ -1115,721 +564,91 @@ footer {
         flex-direction: column;
         background-color: #2c2424;
         position: absolute;
-        top: 100px;
-        right: 0;
-        width: 220px;
-        padding: 20px;
-        border: 2px solid #d4af37;
-    }
-
-    .menu.show {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .menu li {
-        margin: 10px 0;
-    }
-
-    .hero {
-        min-height: 90vh;
-        padding: 40px 0;
-        background-position: center;
-    }
-
-    .hero-content {
-        max-width: 100%;
-        padding: 30px 22px;
-        text-align: left;
-    }
-
-    .hero h1 {
-        font-size: 2.4rem;
-    }
-
-    .hero p,
-    .hero-texto {
-        font-size: 1rem;
-        line-height: 1.6;
-        max-width: 100%;
-    }
-
-    .hero-botoes {
-        justify-content: flex-start;
-    }
-
-    .servicos-grid,
-    .contato-flex,
-    .footer-content,
-    .quem-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .card {
-        width: 90%;
-        max-width: 320px;
-    }
-}
-
-
-
-
-
-
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: #1a1a1a;
-    color: #f5f5f5;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ==========================================================
-   HEADER
-   ========================================================== */
-header {
-    background-color: #000;
-    padding: 15px 0;
-    border-bottom: 2px solid #d4af37;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    height: 75px;
-    width: auto;
-    display: block;
-    margin-left: 30px;
-}
-
-.menu {
-    display: flex;
-    list-style: none;
-}
-
-.menu li {
-    margin-left: 40px;
-}
-
-.menu a {
-    color: #f5f5f5;
-    text-decoration: none;
-    font-weight: lighter;
-    transition: 0.3s;
-}
-
-.menu a:hover {
-    color: #d4af37;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #d4af37;
-}
-
-/* ==========================================================
-   HERO PREMIUM
-   ========================================================== */
-.hero {
-    position: relative;
-    min-height: 100vh;
-    background: url('../img/hero.bg.png') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.35);
-    z-index: 1;
-}
-
-.hero-container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-}
-
-.hero-content {
-    max-width: 620px;
-    background: rgba(0, 0, 0, 0.55);
-    padding: 50px 45px;
-    color: #fff;
-    backdrop-filter: blur(2px);
-    text-align: left;
-}
-
-/* texto entrando da esquerda */
-.hidden-home {
-    opacity: 0;
-    transform: translateX(-120px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.mostrar-home {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.hero h1 {
-    font-size: 4.2rem;
-    line-height: 1.1;
-    font-weight: 700;
-    margin-bottom: 24px;
-    color: #f5f5f5;
-}
-
-.hero p,
-.hero-texto {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    color: #f1f1f1;
-    max-width: 540px;
-}
-
-.hero-tag {
-    display: inline-block;
-    margin-bottom: 18px;
-    padding: 8px 16px;
-    border: 1px solid #d4af37;
-    border-radius: 30px;
-    color: #8f6e02;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background-color: #241c01;
-}
-
-.hero-subtitulo {
-    font-size: 1.6rem;
-    color: #ffffff;
-    font-weight: 400;
-    margin-bottom: 22px;
-    line-height: 1.4;
-}
-
-.hero-botoes {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.btn-principal,
-.btn-secundario {
-    display: inline-block;
-    padding: 14px 32px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-.btn-principal {
-    background-color: #d4af37;
-    color: #000;
-    border: 1px solid #d4af37;
-}
-
-.btn-principal:hover {
-    background-color: #f5f5f5;
-    border-color: #f5f5f5;
-    transform: translateY(-2px);
-}
-
-.btn-secundario {
-    background-color: transparent;
-    color: #f5f5f5;
-    border: 1px solid #d4af37;
-}
-
-.btn-secundario:hover {
-    background-color: #d4af37;
-    color: #000;
-    transform: translateY(-2px);
-}
-
-/* ==========================================================
-   TAGS DE SEÇÃO
-   ========================================================== */
-.secao-tag {
-    display: inline-block;
-    margin-bottom: 12px;
-    padding: 7px 14px;
-    border: 1px solid rgba(212, 175, 55, 0.6);
-    border-radius: 30px;
-    color: #d4af37;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background-color: rgba(212, 175, 55, 0.08);
-}
-
-/* ==========================================================
-   QUEM SOMOS
-   ========================================================== */
-#quem-somos {
-    padding: 120px 0;
-    background-color: #111;
-}
-
-.quem-container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.quem-texto,
-.quem-img {
-    flex: 1;
-}
-
-.quem-texto h2 {
-    font-size: 2.5rem;
-    color: #d4af37;
-    margin-bottom: 20px;
-    font-weight: lighter;
-}
-
-.quem-texto p {
-    margin-bottom: 15px;
-    color: #ddd;
-    line-height: 1.8;
-}
-
-.quem-img img {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid #d4af37;
-    display: block;
-}
-
-/* ==========================================================
-   SERVIÇOS
-   ========================================================== */
-#servicos {
-    padding: 100px 0 150px 0;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    background-image: url('../img/fundo-tesoura.png');
-    background-repeat: repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-    overflow: hidden;
-}
-
-#servicos::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgba(8, 8, 8, 0.72);
-    z-index: 1;
-}
-
-#servicos .container {
-    position: relative;
-    z-index: 2;
-}
-
-#servicos h1 {
-    margin-bottom: 25px;
-    font-weight: lighter;
-    font-size: 2.5rem;
-}
-
-.servicos-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background-color: rgba(3, 3, 3, 0.95);
-    padding: 0 0 40px 0;
-    border-radius: 12px;
-    width: 300px;
-    border: 1px solid #333;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-}
-
-.card-img,
-.card-cabelo,
-.card-barba,
-.card-combo {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.card h3 {
-    color: #d4af37;
-    margin-bottom: 15px;
-    padding: 0 10px;
-}
-
-.preco {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-button {
-    background-color: transparent;
-    border: 1px solid #d4af37;
-    color: #d4af37;
-    padding: 10px 24px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #d4af37;
-    color: #000;
-}
-
-/* ==========================================================
-   ANIMAÇÃO DOS CARDS
-   ========================================================== */
-.hidden {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.mostrar {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.card.hidden:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.card.hidden:nth-child(3) {
-    transition-delay: 0.4s;
-}
-
-/* ==========================================================
-   CONTATO NOVO
-   ========================================================== */
-#contato {
-    padding: 110px 0;
-    background: #111;
-    border-top: 1px solid #222;
-}
-
-.contato-container {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.contato-info {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid #2a2a2a;
-    border-radius: 14px;
-    padding: 40px;
-}
-
-.contato-info h2 {
-    font-size: 2.4rem;
-    color: #f5f5f5;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.contato-info p {
-    color: #dddddd;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 12px;
-}
-
-.contato-info strong {
-    color: #d4af37;
-}
-
-.horario-box {
-    margin-top: 28px;
-    padding-top: 24px;
-    border-top: 1px solid #2d2d2d;
-}
-
-.horario-box h3 {
-    color: #f5f5f5;
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-}
-
-.contato-mapa {
-    flex: 1;
-    height: 380px;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 2px solid #d4af37;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-}
-
-.contato-mapa iframe {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-/* ==========================================================
-   FOOTER
-   ========================================================== */
-footer {
-    background-color: #000;
-    padding: 60px 0 20px 0;
-    border-top: 1px solid #333;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.footer-box {
-    flex: 1;
-    min-width: 250px;
-}
-
-.footer-box h3 {
-    color: #d4af37;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-}
-
-.footer-box p {
-    color: #ddd;
-}
-
-.footer-box a {
-    color: #f5f5f5;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-box a:hover {
-    color: #d4af37;
-    padding-left: 5px;
-}
-
-.social-links a {
-    display: inline-block;
-    margin-right: 15px;
-    border: 1px solid #d4af37;
-    padding: 5px 10px;
-    border-radius: 3px;
-}
-
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid #222;
-    padding-top: 20px;
-    color: #666;
-    font-size: 0.8rem;
-}
-
-/* ==========================================================
-   RESPONSIVIDADE
-   ========================================================== */
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        background-color: #2c2424;
-        position: absolute;
-        top: 100px;
-        right: 0;
-        width: 220px;
-        padding: 20px;
-        border: 2px solid #d4af37;
-    }
-
-    .menu.show {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .menu li {
-        margin: 10px 0;
-    }
-
-    .hero {
-        min-height: 90vh;
-        padding: 40px 0;
-        background-position: center;
-    }
-
-    .hero-content {
-        max-width: 100%;
-        padding: 30px 22px;
-        text-align: left;
-    }
-
-    .hero h1 {
-        font-size: 2.4rem;
-    }
-
-    .hero p,
-    .hero-texto {
-        font-size: 1rem;
-        line-height: 1.6;
-        max-width: 100%;
-    }
-
-    .hero-botoes {
-        justify-content: flex-start;
-    }
-
-    .servicos-grid,
-    .footer-content,
-    .quem-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .contato-container {
-        flex-direction: column;
-    }
-
-    .contato-info {
-        padding: 28px 22px;
-        text-align: left;
-    }
-
-    .contato-info h2 {
-        font-size: 2rem;
-    }
-
-    .contato-mapa {
-        height: 300px;
-    }
-
-    .card {
-        width: 90%;
-        max-width: 320px;
-    }
-}
-
-.btn-agendar {
-    display: inline-block;
-    background-color: transparent;
-    border: 1px solid #d4af37;
-    color: #d4af37;
-    padding: 10px 24px;
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.btn-agendar:hover {
-    background-color: #d4af37;
-    color: #000;
-}
-
-
-.whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 60px;
-    height: 60px;
-    z-index: 999;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-color: #1d472c;
-    border-radius: 50%;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    transition: 0.3s;
-}
-
-.whatsapp-float img {
-    width: 32px;
-    height: 32px;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-}
-
-
-/* Ajustes de robustez para o menu mobile */
-nav {
-    position: relative;
-}
-
-@media (max-width: 768px) {
-    .menu {
         top: calc(100% + 8px);
+        right: 0;
+        width: 220px;
+        padding: 20px;
+        border: 2px solid #d4af37;
         z-index: 1200;
         box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        min-height: 90vh;
+        padding: 40px 0;
+        background-position: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding: 30px 22px;
+        text-align: left;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero p,
+    .hero-texto {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    .hero-botoes {
+        justify-content: flex-start;
+    }
+
+    .servicos-grid,
+    .footer-content,
+    .quem-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contato-container {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .contato-info {
+        padding: 28px 22px;
+        text-align: left;
+    }
+
+    .contato-info h2 {
+        font-size: 2rem;
+    }
+
+    .contato-mapa {
+        width: 100%;
+        height: 320px;
+        min-height: 320px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contato-mapa {
+        height: 280px;
+        min-height: 280px;
     }
 }
