@@ -624,9 +624,17 @@ footer {
         flex-direction: column;
         gap: 28px;
     }
+    
 
-    .contato-info {
-        padding: 28px 22px;
+     .contato-info,
+     .contato-mapa{
+        flex: none;
+        width:100%;
+       
+    }
+
+    .contato-info{
+        padding:28px 22px;
         text-align: left;
     }
 
@@ -635,9 +643,15 @@ footer {
     }
 
     .contato-mapa {
-        width: 100%;
-        height: 320px;
-        min-height: 320px;
+        
+        height: 300px;
+        min-height: 300px;
+    }
+
+    .contato-mapa infram {
+        height: 300px;
+        min-height: 300px;
+
     }
 
     .card {
@@ -647,8 +661,24 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .contato-info,
     .contato-mapa {
-        height: 280px;
-        min-height: 280px;
+        flex: none;
+        width: 100%;
+        
     }
+
+    .contato-mapa{
+        height: 260px;
+        min-height: 260px;
+    }
+
+    .contato-mapa infram{
+        height: 260px;
+        min-height: 260px;
+    }
+
+
+    
 }
+
