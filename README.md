@@ -75,15 +75,6 @@ Durante o desenvolvimento deste projeto, foram aplicados conceitos importantes c
 
 ---
 
-## 📞 Contato
-
-Caso tenha interesse em um site profissional:
-
-- WhatsApp: (seu número)
-- GitHub: https://github.com/andersonabbade
-
----
-
 ## 💡 Autor
 
 Desenvolvido por **Anderson Abbade** 🚀
